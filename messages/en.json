@@ -233,7 +233,8 @@
       }
     },
     "partners": {
-      "empty": "No partners or sponsors to display"
+      "empty": "No partners or sponsors to display",
+      "title": "Our Partners"
     },
     "cta": {
       "title": "Bring Tunisia's medinas to your pocket",
@@ -276,6 +277,9 @@
           "answer": "We are expanding across Tunisia with Tunis, Sfax, Kairouan, Mahdia, Hammamet and Tozeur, followed by Morocco, Algeria, Lebanon, Jordan, Saudi Arabia, Egypt and Qatar through 2026."
         }
       ]
+    },
+    "sponsors": {
+      "title": "Our Sponsors"
     }
   },
   "about": {

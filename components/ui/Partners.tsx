@@ -98,7 +98,7 @@ export default function PartnersSponsorsPage() {
     <div className="py-12">
       <div className="container mx-auto">
         {partners.length > 0 && (
-          <Carousel items={partners} title="Our Partners" />
+          <Carousel items={partners} title={t('home.partners.title')} />
         )}
 
         {partners.length > 0 && sponsors.length > 0 && (
@@ -106,7 +106,7 @@ export default function PartnersSponsorsPage() {
         )}
 
         {sponsors.length > 0 && (
-          <Carousel items={sponsors} title="Our Sponsors" />
+          <Carousel items={sponsors} title={t('home.sponsors.title')} />
         )}
 
         {partners.length === 0 && sponsors.length === 0 && (
