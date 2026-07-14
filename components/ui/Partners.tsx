@@ -18,6 +18,7 @@ export default function PartnersSponsorsPage() {
         const partnersResponse = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL!, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          cache: 'no-store',
           body: JSON.stringify({
             query: `
               query GetPartners {
@@ -36,6 +37,7 @@ export default function PartnersSponsorsPage() {
         const sponsorsResponse = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL!, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          cache: 'no-store',
           body: JSON.stringify({
             query: `
               query GetSponsors {
