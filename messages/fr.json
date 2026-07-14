@@ -233,7 +233,7 @@
       }
     },
     "partners": {
-      "msg": "Aucun partenaire ou sponsor à afficher"
+      "empty": "Aucun partenaire ou sponsor à afficher"
     },
     "cta": {
       "title": "Emportez les médinas tunisiennes dans votre poche",

@@ -18,7 +18,7 @@ export interface GetPageResponse {
 export interface PartnerType {
   id: string;
   name: string;
-  image: string;
+  image: { url: string };
   link: string;
 }
 export interface GetPartnersResponse {
@@ -28,7 +28,7 @@ export interface GetPartnersResponse {
 export interface SponsorType {
   id: string;
   name: string;
-  image: string;
+  image: { url: string };
   link: string;
 }
 export interface GetSponsorsResponse {

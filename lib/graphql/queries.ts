@@ -27,7 +27,9 @@ export const GET_PARTNERS = gql`
     partners {
       id
       name
-      image
+      image {
+        url
+      }
       link
     }
   }
@@ -38,7 +40,9 @@ export const GET_SPONSORS = gql`
     sponsors {
       id
       name
-      image
+      image {
+        url
+      }
       link
     }
   }

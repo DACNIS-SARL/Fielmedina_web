@@ -5,7 +5,7 @@ import Image from 'next/image';
 interface CarouselItem {
   name: string;
   link: string;
-  image: string;
+  image: { url: string };
 }
 
 interface CarouselProps {
@@ -51,7 +51,7 @@ export default function PartnerCarousel({ items, title }: CarouselProps) {
             >
               <div className="relative w-24 h-12 md:w-40 md:h-20">
                 <Image
-                  src={getImageUrl(item.image)}
+                  src={getImageUrl(item.image.url)}
                   alt={item.name}
                   fill
                   className="object-contain"

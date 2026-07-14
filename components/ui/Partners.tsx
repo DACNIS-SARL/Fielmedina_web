@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react';
 import { PartnerType, SponsorType } from '../../lib/graphql/types';
 import Carousel from '@/components/ui/Carousel';
+import { useTranslations } from 'next-intl';
 
 export default function PartnersSponsorsPage() {
+  const t = useTranslations();
   const [partners, setPartners] = useState<PartnerType[]>([]);
   const [sponsors, setSponsors] = useState<SponsorType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +27,9 @@ export default function PartnersSponsorsPage() {
                 partners {
                   id
                   name
-                  image
+                  image {
+                    url
+                  }
                   link
                 }
               }
@@ -44,7 +48,9 @@ export default function PartnersSponsorsPage() {
                 sponsors {
                   id
                   name
-                  image
+                  image {
+                    url
+                  }
                   link
                 }
               }
@@ -105,7 +111,7 @@ export default function PartnersSponsorsPage() {
 
         {partners.length === 0 && sponsors.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">No partners or sponsors to display</p>
+            <p className="text-gray-500 text-lg">{t('home.partners.empty')}</p>
           </div>
         )}
       </div>

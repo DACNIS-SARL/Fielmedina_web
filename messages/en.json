@@ -233,7 +233,7 @@
       }
     },
     "partners": {
-      "msg": "No partners or sponsors to display"
+      "empty": "No partners or sponsors to display"
     },
     "cta": {
       "title": "Bring Tunisia's medinas to your pocket",
