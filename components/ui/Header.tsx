@@ -5,8 +5,8 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import type { ComponentProps } from 'react';
 import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
-import { Link } from '../../i18n/navigation';
+import { useTranslations } from 'next-intl';
+import { Link, useRouter, usePathname } from '../../i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
@@ -14,7 +14,8 @@ export default function Header() {
   const t = useTranslations('navigation');
   const aria = useTranslations('common.ariaLabels');
   const headerCopy = useTranslations('header');
-  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   type LinkHref = ComponentProps<typeof Link>['href'];
 
   const anchorNavItems = [
@@ -35,8 +36,8 @@ export default function Header() {
       const anchor = href.substring(2); // Remove '/#'
 
       // If we're not on the home page, navigate to home first then scroll
-      if (window.location.pathname !== `/${locale}` && window.location.pathname !== '/') {
-        window.location.href = `/${locale}${href}`;
+      if (pathname !== '/') {
+        router.push(href as unknown as Parameters<typeof router.push>[0]);
       } else {
         // We're on home page, just scroll to the element
         const element = document.getElementById(anchor);

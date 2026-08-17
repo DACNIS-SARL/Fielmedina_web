@@ -3,6 +3,19 @@ import { HttpLink } from '@apollo/client/link/http';
 import { SetContextLink } from '@apollo/client/link/context';
 import { config } from './config';
 
+declare module '@apollo/client' {
+  namespace ApolloClient {
+    namespace DeclareDefaultOptions {
+      interface WatchQuery {
+        errorPolicy?: 'none' | 'all' | 'ignore';
+      }
+      interface Query {
+        errorPolicy?: 'none' | 'all' | 'ignore';
+      }
+    }
+  }
+}
+
 // Create HTTP link to your Django GraphQL endpoint
 const httpLink = new HttpLink({
   uri: config.graphqlUrl,
