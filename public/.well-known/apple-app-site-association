@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "MU83XD25F4.com.dacnis.Fielmedina"
+        ],
+        "components": [
+          {
+            "/": "/go/*",
+            "comment": "Meta ad deep links and AEM campaign-ID delivery"
+          }
+        ]
+      }
+    ]
+  }
+}
