@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { COVERAGE, RATINGS } from '@/lib/coverage';
 
 const BASE_URL = 'https://www.fielmedina.com';
+const PUBLISHER = 'Dacnis';
 
 type FaqItem = { question: string; answer: string };
 
@@ -16,6 +17,7 @@ export default async function StructuredData({ locale }: { locale: string }) {
       '@type': 'Organization',
       '@id': `${BASE_URL}#organization`,
       name: 'FielMedina',
+      legalName: PUBLISHER,
       url: BASE_URL,
       logo: `${BASE_URL}/logo.png`,
       foundingDate: '2024',

@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 lg:p-8">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
               <div className="text-gray-200 text-center lg:text-left">
-                {t('copyright')}
+                {t('copyright', { year: new Date().getFullYear() })}
               </div>
 
               <nav

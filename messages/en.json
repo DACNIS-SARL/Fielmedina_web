@@ -805,7 +805,7 @@
     }
   },
   "footer": {
-    "copyright": "© Copyrights 2025. All rights reserved.",
+    "copyright": "© {year} Dacnis. All rights reserved.",
     "supportersHeading": "Supported by",
     "supportersTagline": "FielMedina is proudly supported by the Tunisian National Tourist Office (ONTT).",
     "links": {

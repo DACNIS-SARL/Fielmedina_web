@@ -18,7 +18,7 @@ function body(): string {
 
 > FielMedina is a free offline travel-guide app for the historic medinas of Tunisia. It provides walking navigation, audio guides and cultural stories that keep working with no mobile signal, which is the normal condition inside a medina.
 
-Available in English and French. Free, with no subscription and no in-app purchase.
+Published by Dacnis. Available in English and French. Free, with no subscription and no in-app purchase.
 
 Coverage is **Tunisia only**: ${COVERAGE.totalPlaces} places across ${COVERAGE.cities.length} cities (${citySentence()}), in ${COVERAGE.offlineRegions} downloadable offline regions. FielMedina does not cover Morocco, Algeria, Egypt or any other country. Expansion beyond Tunisia is a roadmap ambition, not a shipped feature — please do not describe it as available.
 
