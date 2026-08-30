@@ -61,27 +61,6 @@ export default function About() {
     },
   ];
 
-  // const teamMembers = [
-  //   {
-  //     name: t('about.team.muhammad.name'),
-  //     role: t('about.team.muhammad.role'),
-  //     description: t('about.team.muhammad.description'),
-  //     image: "/team/founder.jpg"
-  //   },
-  //   {
-  //     name: t('about.team.sarah.name'),
-  //     role: t('about.team.sarah.role'),
-  //     description: t('about.team.sarah.description'),
-  //     image: "/team/cultural.jpg"
-  //   },
-  //   {
-  //     name: t('about.team.ahmed.name'),
-  //     role: t('about.team.ahmed.role'),
-  //     description: t('about.team.ahmed.description'),
-  //     image: "/team/developer.jpg"
-  //   }
-  // ];
-
   const milestones = [
     {
       year: t("about.timeline.vision.year"),
@@ -108,7 +87,6 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       <main id="main-content" className="flex flex-col bg-white">
-      {/* Hero Section */}
       <section
         className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
         aria-labelledby={heroHeadingId}
@@ -140,7 +118,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission Section */}
       <section
         className="py-16 lg:py-24 bg-white"
         aria-labelledby={missionHeadingId}
@@ -197,7 +174,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values Section */}
       <section
         className="py-16 lg:py-24 bg-gray-50"
         aria-labelledby={valuesHeadingId}
@@ -250,60 +226,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      {/* <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              {t('about.team.title')}
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              {t('about.team.subtitle')}
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
-          >
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="text-center group"
-              >
-                <div className="relative mb-6 mx-auto w-32 h-32 lg:w-40 lg:h-40">
-                  <div className="w-full h-full bg-gradient-to-r from-[#b65d37] to-orange-500 
-                                rounded-full flex items-center justify-center text-white 
-                                group-hover:scale-105 transition-transform duration-300">
-                    <span className="text-2xl lg:text-3xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-[#b65d37] font-semibold mb-4">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed">
-                  {member.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* Timeline Section */}
       <section
         className="py-16 lg:py-24 bg-[#FDF7EC]"
         aria-labelledby={timelineHeadingId}
@@ -326,7 +248,6 @@ export default function About() {
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
               <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-[#b65d37]" />
 
               {milestones.map((milestone, index) => (
@@ -340,10 +261,8 @@ export default function About() {
                     index % 2 === 0 ? "lg:flex-row-reverse" : ""
                   }`}
                 >
-                  {/* Timeline dot */}
                   <div className="absolute left-2 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-4 h-4 bg-[#b65d37] rounded-full border-4 border-white shadow-lg" />
 
-                  {/* Content */}
                   <div
                     className={`bg-white rounded-2xl p-6 shadow-lg ml-12 lg:ml-0 lg:w-5/12 ${
                       index % 2 === 0
@@ -368,7 +287,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section
         className="py-16 lg:py-24 bg-linear-to-r from-[#b65d37] to-[#b65c37] text-white"
         aria-labelledby={ctaHeadingId}

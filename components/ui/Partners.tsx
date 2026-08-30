@@ -1,98 +1,47 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import { PartnerType, SponsorType } from '../../lib/graphql/types';
 import Carousel from '@/components/ui/Carousel';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function PartnersSponsorsPage() {
-  const t = useTranslations();
-  const [partners, setPartners] = useState<PartnerType[]>([]);
-  const [sponsors, setSponsors] = useState<SponsorType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-
-        const partnersResponse = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL!, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          cache: 'no-store',
-          body: JSON.stringify({
-            query: `
-              query GetPartners {
-                partners {
-                  id
-                  name
-                  image {
-                    url
-                  }
-                  link
-                }
-              }
-            `
-          }),
-        });
-        const partnersData = await partnersResponse.json();
-
-        const sponsorsResponse = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL!, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          cache: 'no-store',
-          body: JSON.stringify({
-            query: `
-              query GetSponsors {
-                sponsors {
-                  id
-                  name
-                  image {
-                    url
-                  }
-                  link
-                }
-              }
-            `
-          }),
-        });
-        const sponsorsData = await sponsorsResponse.json();
-
-        setPartners(partnersData.data?.partners || []);
-        setSponsors(sponsorsData.data?.sponsors || []);
-        setError(null);
-      } catch (err) {
-        console.error('Error fetching data:', err);
-        setError('Failed to load partners and sponsors');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
+const PARTNERS_QUERY = `
+  query GetPartners {
+    partners { id name image { url } link }
   }
+`;
 
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center text-red-600">
-          <p className="text-xl font-semibold">{error}</p>
-        </div>
-      </div>
-    );
+const SPONSORS_QUERY = `
+  query GetSponsors {
+    sponsors { id name image { url } link }
   }
+`;
+
+async function fetchCollection<T>(query: string, key: string): Promise<T[]> {
+  const endpoint = process.env.NEXT_PUBLIC_GRAPHQL_URL;
+  if (!endpoint) return [];
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query }),
+      next: { revalidate: 3600 },
+    });
+    if (!response.ok) return [];
+    const json = await response.json();
+    return (json?.data?.[key] as T[]) ?? [];
+  } catch {
+    return [];
+  }
+}
+
+export default async function PartnersSponsorsPage() {
+  const t = await getTranslations();
+
+  const [partners, sponsors] = await Promise.all([
+    fetchCollection<PartnerType>(PARTNERS_QUERY, 'partners'),
+    fetchCollection<SponsorType>(SPONSORS_QUERY, 'sponsors'),
+  ]);
+
+  if (partners.length === 0 && sponsors.length === 0) return null;
 
   return (
     <div className="py-12">
@@ -107,12 +56,6 @@ export default function PartnersSponsorsPage() {
 
         {sponsors.length > 0 && (
           <Carousel items={sponsors} title={t('home.sponsors.title')} />
-        )}
-
-        {partners.length === 0 && sponsors.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">{t('home.partners.empty')}</p>
-          </div>
         )}
       </div>
     </div>

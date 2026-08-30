@@ -52,38 +52,6 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-16 lg:py-20 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
             <div className="space-y-10 text-center lg:text-left">
-              {/* <div className="space-y-3">
-                <h3 className="text-xl uppercase tracking-widest text-gray-900">
-                  {t('supportersHeading')}
-                </h3>
-                <p className="text-sm text-gray-600 lg:text-gray-500 max-w-2xl mx-auto lg:mx-0">
-                  {t('supportersTagline')}
-                </p>
-                <div
-                  className="flex flex-wrap justify-center lg:justify-start items-center gap-6"
-                  aria-label={`${t('supportersHeading')} ${supporters
-                    .map((supporter) => supporter.shortName ?? supporter.name)
-                    .join(', ')}`}
-                >
-                  {supporters.map((supporter) => (
-                    <a
-                      key={supporter.name}
-                      href={supporter.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center opacity-90 hover:opacity-100 transition"
-                    >
-                      <Image
-                        src={supporter.logo}
-                        alt={supporter.name}
-                        width={supporter.width}
-                        height={supporter.height}
-                        className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition"
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div> */}
 
               <div className="flex justify-center lg:justify-start gap-4">
                 {socialLinks.map(({ icon: Icon, href, label }) => (

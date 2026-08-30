@@ -16,15 +16,12 @@ declare module '@apollo/client' {
   }
 }
 
-// Create HTTP link to your Django GraphQL endpoint
 const httpLink = new HttpLink({
   uri: config.graphqlUrl,
-  credentials: 'include', // Include cookies for authentication
+  credentials: 'include',
 });
 
-// Create auth link to add headers if needed
 const authLink = new SetContextLink((prevContext, operation) => {
-  // Return the headers to the context so httpLink can read them
   return {
     headers: {
       ...prevContext.headers,
@@ -33,7 +30,6 @@ const authLink = new SetContextLink((prevContext, operation) => {
   }
 });
 
-// Create the Apollo Client instance
 export const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache({

@@ -12,7 +12,6 @@ import YoutubeIcon from '../icons/YoutubeIcon';
 import Footer from './Footer';
 import CTA from './CTA';
 
-
 export default function Contact() {
   const t = useTranslations();
   const [formData, setFormData] = useState({
@@ -44,8 +43,6 @@ export default function Contact() {
       }
     }
   };
-
-
 
   const socialLinks = [
     {
@@ -97,7 +94,6 @@ export default function Contact() {
       });
       
       if (response.ok) {
-        // Reset form on success
         setFormData({
           name: '',
           email: '',
@@ -106,7 +102,6 @@ export default function Contact() {
         });
         setSubmitStatus('success');
         
-        // Auto-hide success message after 5 seconds
         setTimeout(() => {
           setSubmitStatus('idle');
         }, 5000);
@@ -123,7 +118,6 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <main id="main-content" className="flex flex-col bg-white">
-      {/* Hero Section */}
       <section
         className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
         aria-labelledby={heroHeadingId}
@@ -149,43 +143,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      {/* <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16"
-          >
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="text-center group"
-              >
-                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${info.gradient} 
-                              flex items-center justify-center text-white shadow-lg group-hover:scale-110 
-                              transition-transform duration-300`}>
-                  <info.icon className="size-8" />
-                </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                  {info.title}
-                </h3>
-                <p className="text-lg font-semibold text-[#b65d37] mb-2">
-                  {info.details}
-                </p>
-                <p className="text-gray-600">
-                  {info.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* Contact Form & Map Section */}
       <section
         className="py-16 lg:py-24 bg-gray-50"
         aria-labelledby={formHeadingId}
@@ -193,7 +150,6 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
             
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -209,7 +165,6 @@ export default function Contact() {
                   </h2>
                 </div>
                 
-                {/* Success Message */}
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -227,7 +182,6 @@ export default function Contact() {
                   </motion.div>
                 )}
 
-                {/* Error Message */}
                 {submitStatus === 'error' && (
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -336,14 +290,12 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Location & Additional Info */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-8"
             >
-              {/* Map placeholder */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{t('contact.location.title')}</h3>
                 <div className="bg-linear-to-br from-[#b65d37]/10 to-orange-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
@@ -353,14 +305,12 @@ export default function Contact() {
                     <p className="text-gray-600">{t('contact.location.description')}</p>
                   </div>
                   
-                  {/* Decorative elements */}
                   <div className="absolute top-4 right-4 w-8 h-8 bg-[#b65d37]/20 rounded-full" />
                   <div className="absolute bottom-6 left-6 w-6 h-6 bg-orange-300/30 rounded-full" />
                   <div className="absolute top-1/2 left-8 w-4 h-4 bg-[#b65d37]/30 rounded-full" />
                 </div>
               </div>
 
-              {/* Business Hours */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="size-6 text-[#b65d37]" />
@@ -382,7 +332,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Quick Links */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{t('contact.quickLinks.title')}</h3>
                 <div className="space-y-3">
@@ -409,7 +358,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Social Media Section */}
       <section
         className="py-16 lg:py-24 bg-white"
         aria-labelledby={socialHeadingId}
@@ -463,7 +411,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section
         className="py-16 lg:py-24 bg-[#FDF7EC]"
         aria-labelledby={faqHeadingId}
@@ -519,63 +466,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      {/* <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl lg:text-4xl font-bold mb-6"
-          >
-            {t('contact.cta.title')}
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
-          >
-            {t('contact.cta.subtitle')}
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.a
-              href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center space-x-2 bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                       hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
-            >
-              <span>{t('contact.cta.downloadButton')}</span>
-            </motion.a>
-            
-            <Link
-              href="/"
-              className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
-                       hover:bg-white hover:text-[#b65d37] transition-colors"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>{t('contact.cta.backHome')}</span>
-              </motion.div>
-            </Link>
-          </motion.div>
-        </div>
-      </section> */}
       <CTA />
 
       </main>

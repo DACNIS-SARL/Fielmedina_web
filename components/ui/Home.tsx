@@ -10,9 +10,8 @@ import BubbleIcon from '../icons/BubbleIcon';
 import WorldIcon from '../icons/WorldIcon';
 import NavigatorIcon from '../icons/NavigatorIcon';
 import CTA from './CTA';
-import Partners from './Partners';
 
-export default function Home() {
+export default function Home({ partners }: { partners?: React.ReactNode }) {
   const t = useTranslations();
   const locale = useLocale();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -176,7 +175,6 @@ export default function Home() {
                   {t('home.hero.subtitle')}
                 </motion.p>
 
-                {/* CTA Buttons */}
                 <div className="flex gap-4">
                   <motion.div
                     variants={fadeInUp}
@@ -262,26 +260,22 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Right content - App mockup */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative flex justify-center"
               >
-                {/* Glow effect */}
                 <div
                   className="absolute inset-0 bg-linear-to-r from-[#b65d37]/20 to-blue-500/20 
                             rounded-full blur-3xl scale-75 opacity-60"
                 />
 
-                {/* Phone mockup */}
                 <div
                   className="relative z-10 bg-gray-900 rounded-[3rem] p-3 shadow-2xl 
                             transform hover:rotate-2 transition-transform duration-500 rotate-0"
                 >
                   <div className="bg-white rounded-[2.5rem] overflow-hidden w-72 lg:w-80 aspect-[9/19.5] flex flex-col">
-                    {/* Image Slider */}
                     <div className="relative flex-1 overflow-hidden bg-gray-100 min-h-0">
                       <div
                         className="flex transition-transform duration-500 ease-in-out h-full"
@@ -306,13 +300,11 @@ export default function Home() {
                               fetchPriority={index === 0 ? "high" : "auto"}
                               loading={index === 0 ? "eager" : "lazy"}
                             />
-                            {/* Overlay gradient for better readability */}
                             <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
                           </div>
                         ))}
                       </div>
 
-                      {/* Slide indicators */}
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                         {sliderImages.map((_, index) => (
                           <button
@@ -329,7 +321,6 @@ export default function Home() {
                         ))}
                       </div>
 
-                      {/* App branding overlay */}
                       <div className="absolute top-4 left-4 right-4">
                         <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-3 text-white">
                           <h2 className="text-lg font-bold">
@@ -591,7 +582,7 @@ export default function Home() {
         </section>
         <section className="bg-white">
           <div className="footer-decoration"></div>
-          <Partners />
+          {partners}
         </section>
 
         <CTA />

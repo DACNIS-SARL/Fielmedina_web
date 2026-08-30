@@ -83,9 +83,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Apple refuses the association file unless it is served as JSON. The file
-        // has no extension, so Next would otherwise send octet-stream and every
-        // Universal Link — and with it Meta's AEM campaign-ID delivery — fails.
         source: '/.well-known/apple-app-site-association',
         headers: [
           {

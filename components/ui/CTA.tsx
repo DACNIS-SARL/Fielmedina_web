@@ -10,7 +10,6 @@ export default function CTA() {
   const locale = useLocale();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Dynamic image sources based on locale
   const googlePlayImage =
     locale === "fr" ? "/googleplay-fr.svg" : "/googleplay-en.svg";
   const iosImage = locale === "fr" ? "/ios-fr.svg" : "/ios-en.svg";
@@ -89,7 +88,6 @@ export default function CTA() {
         </div>
       </div>
 
-      {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full" />
         <div className="absolute top-1/2 right-20 w-16 h-16 bg-white rounded-full" />

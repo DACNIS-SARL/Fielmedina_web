@@ -13,7 +13,6 @@ export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
 
   const switchLocale = (newLocale: 'en' | 'fr') => {
-    // Using next-intl navigation, it handles locale switching automatically
     const searchParams = new URLSearchParams(window.location.search);
 
     const queryParams = Array.from(searchParams.entries()).reduce<Record<string, string | string[]>>(

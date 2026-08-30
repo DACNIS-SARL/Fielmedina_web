@@ -116,7 +116,7 @@
       ]
     },
     "stats": {
-      "rating": "4,8",
+      "rating": "4,7",
       "ratingLabel": "Note moyenne auprès des voyageurs pilotes",
       "locations": "40+",
       "locationsLabel": "Lieux sélectionnés à Sousse et Monastir",
@@ -192,8 +192,8 @@
     },
     "reviews": {
       "title": "Ce que Disent Nos Utilisateurs",
-      "rating": "4,8/5,0",
-      "reviewsCount": "Basé sur plus de 20 avis",
+      "rating": "4,7/5,0",
+      "reviewsCount": "Basé sur 18 notes sur l’App Store et Google Play",
       "testimonials": {
         "ahmed": {
           "name": "Ahmed Ben Salem",
@@ -214,7 +214,7 @@
     },
     "testimonials": {
       "title": "Appréciée par les voyageurs des médinas tunisiennes",
-      "rating": "4,8/5,0",
+      "rating": "4,7/5,0",
       "basedOn": "Plébiscitée par les voyageurs, guides et partenaires culturels pilotes à Sousse et Monastir.",
       "ahmed": {
         "name": "Ahmed Ben Salem",
@@ -261,20 +261,20 @@
       "subtitle": "Toutes les réponses pour préparer votre voyage dans la médina de Sousse.",
       "items": [
         {
-          "question": "L’application FielMedina est-elle gratuite ?",
-          "answer": "Oui. L’application est téléchargeable gratuitement sur Google Play et l’App Store. Des expériences premium optionnelles arriveront plus tard en 2025."
+          "question": "FielMedina est-il gratuit ?",
+          "answer": "Oui. FielMedina est gratuit sur Google Play et sur l’App Store, sans abonnement ni achat intégré."
         },
         {
-          "question": "Puis-je utiliser FielMedina hors connexion dans la médina ?",
-          "answer": "Bien sûr. Téléchargez votre parcours avant la visite et la navigation GPS, les récits audio et les repères restent accessibles hors ligne."
+          "question": "Puis-je utiliser FielMedina hors ligne dans la médina ?",
+          "answer": "Oui. Téléchargez une ville avant de partir : les cartes, la navigation à pied, les récits audio et les points d’intérêt continuent de fonctionner sans réseau."
         },
         {
-          "question": "L’application propose-t-elle des histoires audio ?",
-          "answer": "Chaque point d’intérêt contient des récits multilingues, des photos et des conseils pratiques élaborés avec des experts locaux."
+          "question": "L’application propose-t-elle de l’audio et des récits ?",
+          "answer": "Oui. Les points d’intérêt incluent des guides audio et des récits en français et en anglais, avec photos et informations pratiques de visite."
         },
         {
-          "question": "Quelles seront les prochaines destinations ?",
-          "answer": "Nous étendons FielMedina aux autres médinas tunisiennes (Tunis, Sfax, Kairouan, Mahdia, Hammamet et Tozeur), puis au Maroc, en Algérie, au Liban, en Jordanie, en Arabie saoudite, en Égypte et au Qatar d’ici 2026."
+          "question": "Quelles villes couvre FielMedina ?",
+          "answer": "FielMedina couvre 88 lieux à Tunis, Sousse, Sidi Bou Saïd, Monastir et Yasmine Hammamet, répartis en six régions téléchargeables hors ligne. La couverture concerne uniquement la Tunisie pour l’instant ; d’autres villes tunisiennes sont prévues."
         }
       ]
     },
@@ -870,9 +870,9 @@
   },
   "metadata": {
     "home": {
-      "title": "FielMedina – Explorez les médinas historiques du monde arabe",
-      "description": "Découvrez la Tunisie, le Maroc, l’Algérie et au-delà avec FielMedina, votre guide digital pour explorer les villes patrimoniales d’Afrique du Nord et du Moyen-Orient.",
-      "keywords": "médinas historiques, monde arabe, villes patrimoniales, Afrique du Nord, Moyen-Orient, application voyage FielMedina"
+      "title": "FielMedina – Guide hors ligne des médinas de Tunisie",
+      "description": "Explorez les médinas de Tunis, Sousse, Sidi Bou Saïd et Monastir : cartes hors ligne, navigation à pied et guides audio. Gratuit, et sans réseau.",
+      "keywords": "application voyage Tunisie, médina de Tunis, médina de Sousse, Sidi Bou Saïd, carte hors ligne Tunisie, guide audio Tunisie, FielMedina"
     },
     "about": {
       "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",

@@ -10,7 +10,6 @@ export interface Page {
   updatedAt?: string;
 }
 
-// Query response types
 export interface GetPageResponse {
   page: Page | null;
 }

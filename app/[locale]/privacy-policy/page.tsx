@@ -1,4 +1,5 @@
 import PrivacyPolicy from '@/components/ui/PrivacyPolicy';
+import { ApolloProvider } from '@/components/providers/ApolloProvider';
 import Header from '@/components/ui/Header';
 import {getTranslations} from 'next-intl/server';
 import {Metadata} from 'next';
@@ -41,7 +42,9 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Header />
-      <PrivacyPolicy />
+      <ApolloProvider>
+        <PrivacyPolicy />
+      </ApolloProvider>
     </>
   );
 } 

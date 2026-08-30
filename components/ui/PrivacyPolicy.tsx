@@ -10,8 +10,6 @@ import CTA from './CTA';
 function PrivacyPolicyContent() {
   const locale = useLocale();
   const t = useTranslations('common.api');
-  // Map Next.js locale to Django API language codes and slugs
-  // const apiLanguage = locale === 'fr' ? 'fr' : 'en';
   const apiSlug = locale === 'fr' ? 'politique-de-confidentialite' : 'privacy-policy';
   const { data: pageData, loading, error } = usePage(apiSlug);
 
@@ -56,7 +54,6 @@ export default function PrivacyPolicy() {
   const detailHeadingId = 'privacy-detail-heading';
   
 
-
   const keyPoints = [
     {
       icon: Shield,
@@ -87,7 +84,6 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
       <main id="main-content" className="flex flex-col bg-white">
-      {/* Hero Section */}
       <section
         className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
         aria-labelledby={heroHeadingId}
@@ -116,7 +112,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* Key Points Section */}
       <section
         className="py-16 lg:py-24 bg-white"
         aria-labelledby={keyPointsHeadingId}
@@ -163,7 +158,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* Detailed Policy Section */}
       <section
         className="py-16 lg:py-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
         aria-labelledby={detailHeadingId}
@@ -171,7 +165,6 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
-            {/* Introduction */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,8 +175,6 @@ export default function PrivacyPolicy() {
               <PrivacyPolicyContent />
             </motion.div>
 
-
-            {/* Contact & Updates */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -216,7 +207,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <CTA />
       </main>
       <Footer />

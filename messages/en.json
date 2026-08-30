@@ -116,7 +116,7 @@
       ]
     },
     "stats": {
-      "rating": "4.8",
+      "rating": "4.7",
       "ratingLabel": "Average rating from pilot travelers",
       "locations": "40+",
       "locationsLabel": "Handpicked points across Sousse and Monastir",
@@ -192,8 +192,8 @@
     },
     "reviews": {
       "title": "What Our Users Say",
-      "rating": "4.8/5.0",
-      "reviewsCount": "Based on 20+ reviews",
+      "rating": "4.7/5.0",
+      "reviewsCount": "Based on 18 ratings across the App Store and Google Play",
       "testimonials": {
         "ahmed": {
           "name": "Ahmed Ben Salem",
@@ -214,7 +214,7 @@
     },
     "testimonials": {
       "title": "Loved by travelers exploring Tunisia's medinas",
-      "rating": "4.8/5.0",
+      "rating": "4.7/5.0",
       "basedOn": "Trusted by travelers, guides and cultural partners piloting Sousse and Monastir.",
       "ahmed": {
         "name": "Ahmed Ben Salem",
@@ -262,19 +262,19 @@
       "items": [
         {
           "question": "Is FielMedina free to download?",
-          "answer": "Yes. The app is free on Google Play and the App Store. Optional premium story packs will arrive later in 2025."
+          "answer": "Yes. FielMedina is free on both Google Play and the App Store, with no subscription and no in-app purchases."
         },
         {
           "question": "Can I use FielMedina offline while walking in the Medina?",
-          "answer": "Absolutely. Download your route before you arrive and GPS navigation, audio stories, and map pins continue working offline."
+          "answer": "Yes. Download a city before you go and the maps, walking navigation, audio stories and map pins all keep working with no mobile signal."
         },
         {
           "question": "Does the app include audio and storytelling?",
-          "answer": "Every point of interest includes multi-language storytelling, photos, and practical travel tips curated with local experts."
+          "answer": "Yes. Points of interest include audio guides and written stories in English and French, along with photos and practical visiting information."
         },
         {
-          "question": "What new destinations are coming next?",
-          "answer": "We are expanding across Tunisia with Tunis, Sfax, Kairouan, Mahdia, Hammamet and Tozeur, followed by Morocco, Algeria, Lebanon, Jordan, Saudi Arabia, Egypt and Qatar through 2026."
+          "question": "Which cities does FielMedina cover?",
+          "answer": "FielMedina covers 88 places across Tunis, Sousse, Sidi Bou Said, Monastir and Yasmine Hammamet, in six downloadable offline regions. Coverage is Tunisia only for now; more Tunisian cities are planned."
         }
       ]
     },
@@ -879,9 +879,9 @@
   },
   "metadata": {
     "home": {
-      "title": "FielMedina – Explore Historic Medinas Across the Arab World",
-      "description": "Discover Tunisia, Morocco, Algeria, and beyond with FielMedina — your digital travel guide to the heritage cities of North Africa and the Middle East.",
-      "keywords": "historic medinas, Arab world, heritage cities, North Africa, Middle East, FielMedina travel app"
+      "title": "FielMedina – Offline Guide to Tunisia’s Medinas",
+      "description": "Explore the medinas of Tunis, Sousse, Sidi Bou Said and Monastir with offline maps, walking navigation and audio guides. Free, works with no signal.",
+      "keywords": "Tunisia travel app, Medina of Tunis, Medina of Sousse, Sidi Bou Said, offline map Tunisia, audio guide Tunisia, FielMedina"
     },
     "about": {
       "title": "About FielMedina – Building Tunisia's Smart Medina Travel Guide",

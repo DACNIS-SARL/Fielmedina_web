@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: 'swap',
-  preload: false // Only preload the primary font
+  preload: false
 });
 
 const OG_LOCALE_MAP: Record<string, string> = {
@@ -65,11 +65,20 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     metadataBase: new URL(BASE_URL),
     alternates: {
       canonical: `${BASE_URL}${canonicalPath}`,
+      languages: {
+        ...Object.fromEntries(
+          Object.entries(alternateLanguages).map(([code, path]) => [
+            code,
+            `${BASE_URL}${path}`,
+          ])
+        ),
+        'x-default': `${BASE_URL}${xDefaultHref}`,
+      },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://www.fielmedina.com${canonicalPath}`,
+      url: `${BASE_URL}${canonicalPath}`,
       siteName: 'FielMedina',
       locale: ogLocale,
       alternateLocale: routing.locales
@@ -78,7 +87,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: '/logo.png',
+          url: '/og-image.png',
           width: 1200,
           height: 630,
           alt: t('title'),
@@ -89,7 +98,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/logo.png'],
+      images: ['/og-image.png'],
       site: '@FielMedina',
       creator: '@FielMedina'
     },
@@ -121,7 +130,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <GoogleTagManager gtmId="GTM-THDHNXZM" />
       <head>
         {process.env.NODE_ENV === 'production' && (
           <link
@@ -148,16 +156,10 @@ export default async function LocaleLayout({
         <meta property="al:android:package" content="com.fielmedina.sousse" />
         <meta property="al:android:app_name" content="FielMedina" />
         <meta property="al:web:url" content="https://www.fielmedina.com" />
-        
-        <StructuredData />
-        {/* Explicit hreflang + canonical to avoid Next.js metadata deduplication */}
-        {routing.locales.map((loc) => {
-          const href = `https://www.fielmedina.com${getPathname({ locale: loc, href: '/' })}`;
-          return <link key={loc} rel="alternate" hrefLang={loc} href={href} />;
-        })}
-        <link rel="alternate" hrefLang="x-default" href={`https://www.fielmedina.com${getPathname({ locale: routing.defaultLocale, href: '/' })}`} />
+        <StructuredData locale={locale} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDF7EC]`}>
+        <GoogleTagManager gtmId="GTM-THDHNXZM" />
         <a href="#main-content" className="skip-to-content">
           {skipToContentLabel}
         </a>

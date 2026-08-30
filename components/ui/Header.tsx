@@ -31,22 +31,18 @@ export default function Header() {
   ];
 
   const handleNavClick = (href: string) => {
-    // If it's a hash link (anchor), handle it specially
     if (href.startsWith('/#')) {
-      const anchor = href.substring(2); // Remove '/#'
+      const anchor = href.substring(2);
 
-      // If we're not on the home page, navigate to home first then scroll
       if (pathname !== '/') {
         router.push(href as unknown as Parameters<typeof router.push>[0]);
       } else {
-        // We're on home page, just scroll to the element
         const element = document.getElementById(anchor);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }
     }
-    // For mobile menu, close it
     setIsMenuOpen(false);
   };
 
@@ -100,20 +96,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
 
-            {/* <motion.a
-              href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-2 bg-[#b65d37] text-white px-6 py-3 rounded-full 
-                       hover:bg-[#a0542f] transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Download className="size-4" />
-              <span className="font-medium">{useTranslations('header')('download')}</span>
-            </motion.a> */}
           </div>
-          {/* Mobile controls - Language Switcher and Menu button */}
           <div className="lg:hidden flex items-center space-x-2">
             <LanguageSwitcher />
             <button
@@ -157,7 +140,6 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-
 
         </div>
       </motion.div>
