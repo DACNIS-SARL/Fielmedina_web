@@ -1,4 +1,5 @@
 'use client';
+import { COVERAGE } from '@/lib/coverage';
 
 import { motion } from 'framer-motion';
 import { Star, Quote, CheckCircle, MapPin } from 'lucide-react';
@@ -70,11 +71,11 @@ export default function Home({ partners }: { partners?: React.ReactNode }) {
   const stats = [
     { number: t('home.stats.rating'), label: t('home.stats.ratingLabel') },
     {
-      number: t('home.stats.locations'),
+      number: `${COVERAGE.totalPlaces}`,
       label: t('home.stats.locationsLabel')
     },
     {
-      number: t('home.stats.languages'),
+      number: `${COVERAGE.languages}`,
       label: t('home.stats.languagesLabel')
     }
   ];

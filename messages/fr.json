@@ -9,33 +9,6 @@
     "privacyPolicy": "Politique de confidentialité",
     "termsConditions": "Conditions générales"
   },
-  "seo": {
-    "home": {
-      "title": "FielMedina – Explorez les médinas historiques du monde arabe",
-      "description": "Découvrez la Tunisie, le Maroc, l’Algérie et au-delà avec FielMedina, votre guide digital pour explorer les villes patrimoniales d’Afrique du Nord et du Moyen-Orient.",
-      "keywords": "médinas historiques, monde arabe, villes patrimoniales, Afrique du Nord, Moyen-Orient, application voyage FielMedina"
-    },
-    "about": {
-      "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",
-      "description": "Découvrez comment FielMedina associe experts locaux, conteurs et technologie pour préserver les médinas tunisiennes et encourager un tourisme culturel durable.",
-      "keywords": "FielMedina équipe, innovation patrimoine Tunisie, storytelling médina, technologie tourisme culturel"
-    },
-    "contact": {
-      "title": "Contactez FielMedina – Partenariats avec le guide numérique des médinas",
-      "description": "Échangez avec l’équipe FielMedina pour des partenariats touristiques, projets médias ou assistance aux voyageurs en Tunisie.",
-      "keywords": "contacter FielMedina, support application voyage Tunisie, partenariats tourisme Tunisie, guide culturel numérique"
-    },
-    "termsConditions": {
-      "title": "Conditions d’utilisation FielMedina – Guide de voyage numérique",
-      "description": "Comprenez les règles d’usage de FielMedina, le guide des médinas tunisiennes, y compris les bonnes pratiques de tourisme responsable.",
-      "keywords": "conditions FielMedina, politique application voyage Tunisie, guide patrimoine conditions, tourisme responsable"
-    },
-    "privacyPolicy": {
-      "title": "Politique de confidentialité FielMedina – Protection des données voyage",
-      "description": "Découvrez comment FielMedina protège la vie privée des voyageurs, sécurise les données de localisation et respecte les réglementations tunisiennes et internationales.",
-      "keywords": "confidentialité FielMedina, protection données voyage Tunisie, application médina confidentialité, tourisme culturel données"
-    }
-  },
   "common": {
     "downloadAndroid": "Télécharger pour Android",
     "downloadIOS": "Télécharger pour iOS",
@@ -102,25 +75,23 @@
       "badge": "🧭 Explorez les médinas historiques du monde arabe",
       "title": {
         "line1": "Explorez les médinas patrimoniales de Tunisie",
-        "line2": "en commençant par Sousse et Monastir",
+        "line2": "dans cinq villes tunisiennes",
         "line3": "grâce à l’application FielMedina"
       },
-      "subtitle": "FielMedina est le compagnon de voyage numérique qui lance des city packs pour Sousse et Monastir tout en co-créant les prochaines expériences en Tunisie, en Afrique du Nord et au Moyen-Orient.",
+      "subtitle": "FielMedina est le compagnon de voyage numérique qui lance des city packs pour Tunis, Sousse, Sidi Bou Saïd, Monastir et Yasmine Hammamet, tout en co-créant les prochaines expériences en Tunisie.",
       "downloadButton": "Téléchargement Gratuit",
       "watchButton": "Voir la Démo",
       "highlightsTitle": "Pourquoi les voyageurs choisissent FielMedina",
       "highlights": [
-        "Circuits GPS hors ligne, récits audio et coups de cœur artisans pour Sousse et Monastir",
+        "Circuits GPS hors ligne, récits audio et coups de cœur artisans dans les cinq villes",
         "Feuille de route 2026 : Tunis, Sfax, Kairouan, Mahdia, Hammamet et Tozeur arrivent bientôt",
         "Co-création 2026–2028 : Maroc (Fès, Marrakech, Chefchaouen), Algérie (Alger, Constantine), Liban, Jordanie, Arabie saoudite, Égypte et Qatar"
       ]
     },
     "stats": {
       "rating": "4,7",
-      "ratingLabel": "Note moyenne auprès des voyageurs pilotes",
-      "locations": "40+",
-      "locationsLabel": "Lieux sélectionnés à Sousse et Monastir",
-      "languages": "2",
+      "ratingLabel": "Note moyenne sur l’App Store et Google Play",
+      "locationsLabel": "Lieux sélectionnés à Tunis, Sousse, Sidi Bou Saïd, Monastir et Yasmine Hammamet",
       "languagesLabel": "Langues disponibles au lancement"
     },
     "features": {
@@ -141,7 +112,7 @@
     },
     "cities": {
       "title": "La Tunisie d’abord, un réseau de médinas en expansion",
-      "subtitle": "Téléchargez dès maintenant les packs Sousse et Monastir et suivez notre feuille de route alors que nous ouvrons de nouvelles expériences en Tunisie, en Afrique du Nord et au Moyen-Orient.",
+      "subtitle": "Téléchargez dès maintenant les city packs et suivez notre feuille de route alors que nous ouvrons de nouvelles expériences en Tunisie.",
       "items": [
         {
           "name": "Médina de Sousse",
@@ -215,7 +186,7 @@
     "testimonials": {
       "title": "Appréciée par les voyageurs des médinas tunisiennes",
       "rating": "4,7/5,0",
-      "basedOn": "Plébiscitée par les voyageurs, guides et partenaires culturels pilotes à Sousse et Monastir.",
+      "basedOn": "Plébiscitée par les voyageurs, guides et partenaires culturels en Tunisie.",
       "ahmed": {
         "name": "Ahmed Ben Salem",
         "role": "Guide touristique",
@@ -238,7 +209,7 @@
     },
     "cta": {
       "title": "Emportez les médinas tunisiennes dans votre poche",
-      "subtitle": "Téléchargez FielMedina pour des récits multilingues, une navigation hors ligne et des itinéraires qui s’étendent de Sousse et Monastir aux prochaines villes tunisiennes.",
+      "subtitle": "Téléchargez FielMedina pour des récits multilingues, une navigation hors ligne et des itinéraires à Tunis, Sousse, Sidi Bou Saïd, Monastir et Yasmine Hammamet.",
       "downloadButton": "Télécharger pour Android"
     },
     "app": {
@@ -871,7 +842,7 @@
   "metadata": {
     "home": {
       "title": "FielMedina – Guide hors ligne des médinas de Tunisie",
-      "description": "Explorez les médinas de Tunis, Sousse, Sidi Bou Saïd et Monastir : cartes hors ligne, navigation à pied et guides audio. Gratuit, et sans réseau.",
+      "description": "Explorez les médinas de Tunis, Sousse, Sidi Bou Saïd, Monastir et Yasmine Hammamet : cartes hors ligne, navigation à pied et guides audio.",
       "keywords": "application voyage Tunisie, médina de Tunis, médina de Sousse, Sidi Bou Saïd, carte hors ligne Tunisie, guide audio Tunisie, FielMedina"
     },
     "about": {

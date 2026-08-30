@@ -1,22 +1,7 @@
 import { getTranslations } from 'next-intl/server';
+import { COVERAGE, RATINGS } from '@/lib/coverage';
 
 const BASE_URL = 'https://www.fielmedina.com';
-
-const APP_FACTS = {
-  version: '2.1.7',
-  ratingValue: 4.7,
-  ratingCount: 18,
-  appStoreUrl: 'https://apps.apple.com/app/id6751167445',
-  playStoreUrl:
-    'https://play.google.com/store/apps/details?id=com.fielmedina.sousse',
-  cities: [
-    { name: 'Tunis', description: 'Medina of Tunis, a UNESCO World Heritage site' },
-    { name: 'Sousse', description: 'Medina of Sousse, a UNESCO World Heritage site, and Hergla' },
-    { name: 'Sidi Bou Said', description: 'The blue-and-white clifftop village north of Tunis' },
-    { name: 'Monastir', description: 'Medina of Monastir and its ribat' },
-    { name: 'Yasmine Hammamet', description: 'The Hammamet seafront medina district' },
-  ],
-} as const;
 
 type FaqItem = { question: string; answer: string };
 
@@ -55,12 +40,12 @@ export default async function StructuredData({ locale }: { locale: string }) {
       name: 'FielMedina: Travel Guide',
       applicationCategory: 'TravelApplication',
       operatingSystem: 'iOS, Android',
-      softwareVersion: APP_FACTS.version,
+      softwareVersion: RATINGS.appVersion,
       description: meta('description'),
       publisher: { '@id': `${BASE_URL}#organization` },
       inLanguage: ['en', 'fr'],
-      installUrl: [APP_FACTS.appStoreUrl, APP_FACTS.playStoreUrl],
-      downloadUrl: [APP_FACTS.appStoreUrl, APP_FACTS.playStoreUrl],
+      installUrl: [RATINGS.appStoreUrl, RATINGS.playStoreUrl],
+      downloadUrl: [RATINGS.appStoreUrl, RATINGS.playStoreUrl],
       featureList: [
         'Offline maps and walking navigation inside the medinas',
         'Audio guides and written stories for each point of interest',
@@ -76,8 +61,8 @@ export default async function StructuredData({ locale }: { locale: string }) {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: APP_FACTS.ratingValue,
-        ratingCount: APP_FACTS.ratingCount,
+        ratingValue: RATINGS.combined.value,
+        ratingCount: RATINGS.combined.count,
         bestRating: 5,
         worstRating: 1,
       },
@@ -86,14 +71,14 @@ export default async function StructuredData({ locale }: { locale: string }) {
       '@type': 'ItemList',
       '@id': `${BASE_URL}#cities`,
       name: 'Cities covered by FielMedina',
-      numberOfItems: APP_FACTS.cities.length,
-      itemListElement: APP_FACTS.cities.map((city, index) => ({
+      numberOfItems: COVERAGE.cities.length,
+      itemListElement: COVERAGE.cities.map((city, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: {
           '@type': 'TouristDestination',
           name: city.name,
-          description: city.description,
+          description: `${city.region}. ${city.places} places in the FielMedina app.`,
           addressCountry: 'TN',
         },
       })),
